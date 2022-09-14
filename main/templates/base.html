@@ -1,34 +1,107 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>URL Shortener</title>
     <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+        * {
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 1.2em;
+        }
+
         body {
+            width: 100%;
+            height: 500px;
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
         }
+
         .main {
+            border: 2px solid lightcoral;
+            border-radius: 20px;
+            padding: 20px;
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
-            align-items: center;
+            flex-direction: column;
         }
-        .main > h1, .main > form {
-            flex: 1 1 100%;
+
+        form {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
             align-items: center;
+            flex-wrap: wrap;
+        }
+
+        form>div {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .main-child {
+            display: flex;
+            justify-content: center;
+        }
+
+        .header,
+        .form-label {
+            color: lightcoral;
+        }
+
+        .header {
+            font-size: 1.5em;
+        }
+
+        .form-label {
+            font-size: 1.2em;
+        }
+
+        .form-control {
+            border: 1px solid coral;
+            background-color: whitesmoke;
+            border-radius: 10px;
+            height: 50px;
+            width: 600px;
+            padding-left: 10px;
+            color: chocolate;
+            font-size: 0.5em;
+        }
+
+        form>button {
+            margin: 0px 5px;
+            padding: 5px;
+            background-color: lightcoral;
+            color: white;
+            border-radius: 10px;
+            font-size: 0.8em;
+            font-weight: 700;
+            border: 2px solid lightcoral;
+        }
+
+        form>button:hover {
+            color: coral;
+            background-color: white;
+        }
+
+        .short-url {
+            color: chocolate;
         }
     </style>
+
 </head>
 
 <body>
     <div class="main">
-        <h1>URL Shortener</h1>
+        <h2 class="main-child header">URL Shortener</h2>
         {% block content %}{% endblock %}
     </div>
 </body>
