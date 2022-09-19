@@ -1,4 +1,4 @@
-apiVersion: url-shortener/v1
+apiVersion: v1
 kind: Deployment
 metadata:
   name: url-shortener-deployment
