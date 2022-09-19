@@ -1,0 +1,14 @@
+apiVersion: url-shortener/v1
+kind: Service
+metadata:
+  name: url-shortener-svc
+  labels:
+    app: url-shortener-app
+spec:
+  type: NodePort
+  ports:
+  - port: 8000
+    nodePort: 8080
+    protocol: TCP
+  selector:
+    app: url-shortener-app

@@ -1,0 +1,25 @@
+apiVersion: url-shortener/v1
+kind: Deployment
+metadata:
+  name: url-shortener-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: url-shortener-app
+  minReadySeconds: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: url-shortener-app
+    spec:
+      containers:
+      - name: url-shortener-pod
+        image: islamwalid/url-shortener:latest
+        ports:
+        - containerPort: 8000
