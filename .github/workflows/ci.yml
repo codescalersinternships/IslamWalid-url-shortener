@@ -6,6 +6,7 @@ jobs:
   building-docker-image:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v3
     - name: build and push url shortener docker image
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
