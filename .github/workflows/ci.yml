@@ -1,9 +1,9 @@
-name: Todo tests
+name: url-shortener-docker-image
 
 on: push
 
 jobs:
-  building docker image:
+  building-docker-image:
     runs-on: ubuntu-latest
     steps:
     - name: build and push url shortener docker image
